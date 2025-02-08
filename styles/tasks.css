@@ -1,48 +1,20 @@
-.tasks-container {
-    background-color: #7687A1;
-    padding: 20px;
+.task-item {
+    background-color: #4D4D4D;
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 20px;
-}
-
-.tasks-container h1 {
-    text-align: center;
-    color: #fff;
-}
-
-.tasks-container .input-text {
-    margin-top: 5px;
-}
-
-.tasks-container .buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.tasks-container button {
+    box-shadow: 2px 4px 4px #0000009F;
     padding: 10px;
-    margin-top: 20px;
-    font-size: 12px;
-    background-color: #88bcd1; 
-    color: #272626;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px #0000009F; 
-    cursor: pointer;
+    margin-bottom: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Coloca descrição abaixo do titulo! */
 }
 
-@media (max-width: 600px) {
-    .tasks-container {
-        padding: 15px;
-        width: 90%;
-    }
+.task-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
 
-    .tasks-container .input-text, .tasks-container button {
-        font-size: 14px;
-    }
+.task-description {
+    font-size: 0.9em;
+    margin-top: 5px;
 }
