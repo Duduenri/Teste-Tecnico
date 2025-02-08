@@ -1,10 +1,19 @@
 button {
     padding: 10px;
     margin-top: 20px;
-    font-size: 16px;
-    background: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+    font-size: 12px;
+    background-color: #88bcd1; /* Cor de fundo */
+    color: #272626;
     cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px #0000009F; 
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
 }
