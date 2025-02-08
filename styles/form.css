@@ -40,7 +40,11 @@ input[type="text"] {
     border-radius: 4px;
     font-size: 16px;
     background-color: #5D677C; /* Cor azul mais escura */
-    color: #888; /* Cor do texto cinza */
+    color: #fff; /* Cor do texto */
+}
+
+input[type="text"]::placeholder {
+    color: #bbb; /* Cor do texto do placeholder cinza mais claro */
 }
 
 ul {
