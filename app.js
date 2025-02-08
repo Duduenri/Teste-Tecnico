@@ -74,9 +74,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 atualizarListaTarefas(filtro);
             });
 
+            const deleteImg = document.createElement('img');
+            deleteImg.classList.add('task-delete');
+            deleteImg.src = 'images/deletar.png';
+            deleteImg.alt = 'Deletar';
+
+            deleteImg.addEventListener('click', () => {
+                tarefas.splice(index, 1);
+                localStorage.setItem('tarefas', JSON.stringify(tarefas));
+                atualizarListaTarefas(filtro);
+            });
+
             li.appendChild(titulo);
             li.appendChild(descricao);
             li.appendChild(statusImg);
+            li.appendChild(deleteImg);
 
             listaTarefas.appendChild(li);
         });
@@ -117,9 +129,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 atualizarListaTarefas(filtro);
             });
 
+            const deleteImg = document.createElement('img');
+            deleteImg.classList.add('task-delete');
+            deleteImg.src = 'images/deletar.png';
+            deleteImg.alt = 'Deletar';
+
+            deleteImg.addEventListener('click', () => {
+                tarefas.splice(index, 1);
+                localStorage.setItem('tarefas', JSON.stringify(tarefas));
+                atualizarListaTarefas(filtro);
+            });
+
             li.appendChild(titulo);
             li.appendChild(descricao);
             li.appendChild(statusImg);
+            li.appendChild(deleteImg);
 
             listaTarefas.appendChild(li);
         });
