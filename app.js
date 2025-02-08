@@ -51,6 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
         tarefasFiltradas.forEach((tarefa, index) => {
             const li = document.createElement('li');
             li.classList.add('task-item'); // Adiciona a classe CSS
+            if (tarefa.status === 'concluido') {
+                li.style.backgroundColor = '#566F42';
+            }
 
             const titulo = document.createElement('div');
             titulo.textContent = tarefa.titulo;
@@ -60,8 +63,20 @@ document.addEventListener('DOMContentLoaded', () => {
             descricao.textContent = tarefa.descricao;
             descricao.classList.add('task-description');
 
+            const statusImg = document.createElement('img');
+            statusImg.classList.add('task-status');
+            statusImg.src = tarefa.status === 'pendente' ? 'images/pendente.png' : 'images/concluido.png';
+            statusImg.alt = tarefa.status;
+
+            statusImg.addEventListener('click', () => {
+                tarefa.status = tarefa.status === 'pendente' ? 'concluido' : 'pendente';
+                localStorage.setItem('tarefas', JSON.stringify(tarefas));
+                atualizarListaTarefas(filtro);
+            });
+
             li.appendChild(titulo);
             li.appendChild(descricao);
+            li.appendChild(statusImg);
 
             listaTarefas.appendChild(li);
         });
@@ -79,6 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
         tarefasFiltradas.forEach((tarefa, index) => {
             const li = document.createElement('li');
             li.classList.add('task-item'); // class css
+            if (tarefa.status === 'concluido') {
+                li.style.backgroundColor = '#566F42';
+            }
 
             const titulo = document.createElement('div');
             titulo.textContent = tarefa.titulo;
@@ -88,8 +106,20 @@ document.addEventListener('DOMContentLoaded', () => {
             descricao.textContent = tarefa.descricao;
             descricao.classList.add('task-description');
 
+            const statusImg = document.createElement('img');
+            statusImg.classList.add('task-status');
+            statusImg.src = tarefa.status === 'pendente' ? 'images/pendente.png' : 'images/concluido.png';
+            statusImg.alt = tarefa.status;
+
+            statusImg.addEventListener('click', () => {
+                tarefa.status = tarefa.status === 'pendente' ? 'concluido' : 'pendente';
+                localStorage.setItem('tarefas', JSON.stringify(tarefas));
+                atualizarListaTarefas(filtro);
+            });
+
             li.appendChild(titulo);
             li.appendChild(descricao);
+            li.appendChild(statusImg);
 
             listaTarefas.appendChild(li);
         });
