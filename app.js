@@ -13,17 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (titulo && descricao) {
             const tarefa = {
                 titulo: titulo,
-                descricao: descricao
+                descricao: descricao,
+                status: 'pendente'
             };
 
             console.log('Tarefa adicionada:', tarefa);
 
-            // salvar 
+            // salvar
             let tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
             tarefas.push(tarefa);
             localStorage.setItem('tarefas', JSON.stringify(tarefas));
 
-            // limpar form
+            // limpar campos
             tituloInput.value = '';
             descricaoInput.value = '';
 
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         tarefas.forEach((tarefa, index) => {
             const li = document.createElement('li');
-            li.textContent = `${tarefa.titulo}: ${tarefa.descricao}`;
+            li.textContent = `${tarefa.titulo}: ${tarefa.descricao} [${tarefa.status}]`;
             listaTarefas.appendChild(li);
         });
     }
