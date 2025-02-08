@@ -39,17 +39,8 @@ input[type="text"] {
     border: none;
     border-radius: 4px;
     font-size: 16px;
-}
-
-button {
-    padding: 10px;
-    margin-top: 20px;
-    font-size: 16px;
-    background: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    background-color: #5D677C; /* Cor azul mais escura */
+    color: #888; /* Cor do texto cinza */
 }
 
 ul {
