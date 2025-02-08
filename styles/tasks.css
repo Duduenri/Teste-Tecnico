@@ -1,0 +1,58 @@
+.tasks-container {
+    background-color: #7687A1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.tasks-container h1 {
+    text-align: center;
+    color: #fff;
+}
+
+.tasks-container input[type="text"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #5D677C;
+    color: #fff; 
+}
+
+.tasks-container input[type="text"]::placeholder {
+    color: #bbb; 
+}
+
+.tasks-container .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.tasks-container button {
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 12px;
+    background-color: #88bcd1; 
+    color: #272626;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px #0000009F; 
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .tasks-container {
+        padding: 15px;
+        width: 90%;
+    }
+
+    .tasks-container input[type="text"], .tasks-container button {
+        font-size: 14px;
+    }
+}

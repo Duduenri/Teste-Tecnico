@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/form.css">
     <link rel="stylesheet" href="styles/button.css">
+    <link rel="stylesheet" href="styles/tasks.css">
 </head>
 <body>
     <div class="container">
@@ -20,8 +21,19 @@
             
             <button type="submit">Adicionar</button>
         </form>
+    </div>
+
+    <div class="tasks-container">
+        <h1>Cards de Tarefas</h1>
+        <input type="text" id="pesquisar-tarefa" placeholder="Pesquisar tarefa">
+        <div class="buttons">
+            <button id="todas-tarefas">Todas Tarefas</button>
+            <button id="pendentes">Pendentes</button>
+            <button id="concluidos">Concluídos</button>
+        </div>
         <ul id="lista-tarefas"></ul>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
