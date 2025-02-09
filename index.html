@@ -28,11 +28,28 @@
         <h1>Cards de Tarefas</h1>
         <input type="text" id="pesquisar-tarefa" class="input-text" placeholder="Pesquisar tarefa">
         <div class="buttons">
-            <button id="todas-tarefas">Todas Tarefas</button>
+            <button id="todas-tarefas">Todas</button>
             <button id="pendentes">Pendentes</button>
-            <button id="concluidos">Concluídos</button>
+            <button id="concluidos">Concluídas</button>
         </div>
         <ul id="lista-tarefas"></ul>
+    </div>
+
+    <!-- Modal para editar tarefa -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Tarefa</h2>
+            <form id="form-editar-tarefa">
+                <label for="editar-titulo-tarefa">Título da Tarefa</label>
+                <input type="text" id="editar-titulo-tarefa" class="input-text" placeholder="Novo título">
+                
+                <label for="editar-descricao-tarefa">Descrição</label>
+                <input type="text" id="editar-descricao-tarefa" class="input-text" placeholder="Nova descrição">
+                
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
     </div>
 
     <script src="app.js"></script>

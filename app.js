@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const pendentesBtn = document.getElementById('pendentes');
     const concluidosBtn = document.getElementById('concluidos');
 
+    const editModal = document.getElementById('edit-modal');
+    const closeModal = document.querySelector('.close');
+    const formEditarTarefa = document.getElementById('form-editar-tarefa');
+    const editarTituloInput = document.getElementById('editar-titulo-tarefa');
+    const editarDescricaoInput = document.getElementById('editar-descricao-tarefa');
+
+    let tarefaEditando = null; // var atualizavel, para permitir editar as tarefas
+
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -40,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function atualizarListaTarefas(filtro = 'todas') {
-        listaTarefas.innerHTML = '';
+        listaTarefas.innerHTML = ''; // limpa lista para evitar o bug de tasks duplicadas
         const tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
 
         const tarefasFiltradas = tarefas.filter(tarefa => {
@@ -49,12 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         tarefasFiltradas.forEach((tarefa, index) => {
-            const li = document.createElement('li');
+            const li = document.createElement('li'); // novo elemento
             li.classList.add('task-item'); // Adiciona a classe CSS
             if (tarefa.status === 'concluido') {
-                li.style.backgroundColor = '#566F42';
+                li.style.backgroundColor = '#566F42'; // se a tarefa estiver concluida, atribuir background verde
             }
 
+            // criar element html
             const titulo = document.createElement('div');
             titulo.textContent = tarefa.titulo;
             titulo.classList.add('task-title');
@@ -63,8 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
             descricao.textContent = tarefa.descricao;
             descricao.classList.add('task-description');
 
+            // cria elemento img
             const statusImg = document.createElement('img');
             statusImg.classList.add('task-status');
+            // e altera a img conforme o status
             statusImg.src = tarefa.status === 'pendente' ? 'images/pendente.png' : 'images/concluido.png';
             statusImg.alt = tarefa.status;
 
@@ -85,14 +96,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 atualizarListaTarefas(filtro);
             });
 
+            const editImg = document.createElement('img');
+            editImg.classList.add('task-edit');
+            editImg.src = 'images/editar.png';
+            editImg.alt = 'Editar';
+
+            editImg.addEventListener('click', () => {
+                tarefaEditando = { ...tarefa, index };
+                editarTituloInput.value = tarefa.titulo;
+                editarDescricaoInput.value = tarefa.descricao;
+                editModal.style.display = 'block';
+            });
+
             li.appendChild(titulo);
             li.appendChild(descricao);
             li.appendChild(statusImg);
             li.appendChild(deleteImg);
+            li.appendChild(editImg);
 
             listaTarefas.appendChild(li);
         });
     }
+
+    formEditarTarefa.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (tarefaEditando) {
+            console.log('Salvando alterações para:', tarefaEditando);
+            const tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
+            tarefas[tarefaEditando.index] = {
+                ...tarefas[tarefaEditando.index],
+                titulo: editarTituloInput.value,
+                descricao: editarDescricaoInput.value
+            };
+            localStorage.setItem('tarefas', JSON.stringify(tarefas));
+            atualizarListaTarefas();
+            editModal.style.display = 'none';
+        }
+    });
+
+    closeModal.addEventListener('click', () => {
+        editModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === editModal) {
+            editModal.style.display = 'none';
+        }
+    });
 
     pesquisarInput.addEventListener('input', () => {
         const termo = pesquisarInput.value.toLowerCase(); //termo digitado no input
@@ -140,10 +191,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 atualizarListaTarefas(filtro);
             });
 
+            const editImg = document.createElement('img');
+            editImg.classList.add('task-edit');
+            editImg.src = 'images/editar.png';
+            editImg.alt = 'Editar';
+
+            editImg.addEventListener('click', () => {
+                tarefaEditando = { ...tarefa, index };
+                editarTituloInput.value = tarefa.titulo;
+                editarDescricaoInput.value = tarefa.descricao;
+                editModal.style.display = 'block';
+            });
+
             li.appendChild(titulo);
             li.appendChild(descricao);
             li.appendChild(statusImg);
             li.appendChild(deleteImg);
+            li.appendChild(editImg);
 
             listaTarefas.appendChild(li);
         });
