@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (tarefaEditando) {
             console.log('Salvando alterações para:', tarefaEditando);
-            const tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
+            const tarefas = JSON.parse(localStorage.getItem('tarefas')) || []; // lista do navgegador
             tarefas[tarefaEditando.index] = {
                 ...tarefas[tarefaEditando.index],
                 titulo: editarTituloInput.value,
