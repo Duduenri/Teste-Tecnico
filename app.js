@@ -73,10 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
             descricao.classList.add('task-description');
 
             // cria elemento img
-            const statusImg = document.createElement('img');
+            const statusImg = document.createElement('div');
             statusImg.classList.add('task-status');
             // e altera a img conforme o status
-            statusImg.src = tarefa.status === 'pendente' ? 'images/pendente.png' : 'images/concluido.png';
+            statusImg.innerHTML = tarefa.status === 'pendente' ? 
+                `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>` : 
+                `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>`;
             statusImg.alt = tarefa.status;
 
             statusImg.addEventListener('click', () => {
@@ -85,10 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 atualizarListaTarefas(filtro);
             });
 
-            const deleteImg = document.createElement('img');
+            const deleteImg = document.createElement('div');
             deleteImg.classList.add('task-delete');
-            deleteImg.src = 'images/deletar.png';
-            deleteImg.alt = 'Deletar';
+            deleteImg.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                   </svg>`;
 
             deleteImg.addEventListener('click', () => {
                 tarefas.splice(index, 1);
@@ -96,10 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 atualizarListaTarefas(filtro);
             });
 
-            const editImg = document.createElement('img');
+            const editImg = document.createElement('div');
             editImg.classList.add('task-edit');
-            editImg.src = 'images/editar.png';
-            editImg.alt = 'Editar';
+            editImg.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                  </svg>`;
 
             editImg.addEventListener('click', () => {
                 tarefaEditando = { ...tarefa, index };
@@ -169,9 +177,15 @@ document.addEventListener('DOMContentLoaded', () => {
             descricao.textContent = tarefa.descricao;
             descricao.classList.add('task-description');
 
-            const statusImg = document.createElement('img');
+            const statusImg = document.createElement('div');
             statusImg.classList.add('task-status');
-            statusImg.src = tarefa.status === 'pendente' ? 'images/pendente.png' : 'images/concluido.png';
+            statusImg.innerHTML = tarefa.status === 'pendente' ? 
+                `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>` : 
+                `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>`;
             statusImg.alt = tarefa.status;
 
             statusImg.addEventListener('click', () => {
@@ -180,10 +194,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 atualizarListaTarefas(filtro);
             });
 
-            const deleteImg = document.createElement('img');
+            const deleteImg = document.createElement('div');
             deleteImg.classList.add('task-delete');
-            deleteImg.src = 'images/deletar.png';
-            deleteImg.alt = 'Deletar';
+            deleteImg.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                   </svg>`;
 
             deleteImg.addEventListener('click', () => {
                 tarefas.splice(index, 1);
@@ -191,10 +206,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 atualizarListaTarefas(filtro);
             });
 
-            const editImg = document.createElement('img');
+            const editImg = document.createElement('div');
             editImg.classList.add('task-edit');
-            editImg.src = 'images/editar.png';
-            editImg.alt = 'Editar';
+            editImg.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                  </svg>`;
 
             editImg.addEventListener('click', () => {
                 tarefaEditando = { ...tarefa, index };
