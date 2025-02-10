@@ -14,6 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const editarTituloInput = document.getElementById('editar-titulo-tarefa');
     const editarDescricaoInput = document.getElementById('editar-descricao-tarefa');
 
+    const darkLight = document.getElementById('theme-toggle');
+    const iconDark = document.getElementById('icon-dark');
+    const iconLight = document.getElementById('icon-light');
+
+    darkLight.addEventListener('click', () => {
+        iconDark.classList.toggle('hidden');
+        iconLight.classList.toggle('hidden');
+        document.body.classList.toggle('dark-theme');
+    });
+
     let tarefaEditando = null; // var atualizavel, para permitir editar as tarefas
 
     form.addEventListener('submit', (event) => {
