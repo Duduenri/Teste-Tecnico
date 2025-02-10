@@ -3,12 +3,21 @@ button {
     margin-top: 20px;
     font-size: 12px;
     background-color: #88bcd1; /* Cor de fundo */
-    color: #272626;
+    color: #ffffff;
     cursor: pointer;
     border: none;
     border-radius: 10px;
-    box-shadow: 2px 4px 4px #0000009F; 
-    cursor: pointer;
+    box-shadow: 2px 4px 4px #0000009F;
+}
+
+.tasks-container .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.tasks-container button {
+    color: #ffffff;
 }
 
 @media (max-width: 600px) {

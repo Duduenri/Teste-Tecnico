@@ -17,24 +17,6 @@
     margin-top: 5px;
 }
 
-.tasks-container .buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.tasks-container button {
-    padding: 10px;
-    margin-top: 20px;
-    font-size: 12px;
-    background-color: #88bcd1; 
-    color: #272626;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px #0000009F; 
-    cursor: pointer;
-}
 
 @media (max-width: 600px) {
     .tasks-container {
