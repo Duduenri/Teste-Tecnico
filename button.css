@@ -1,0 +1,42 @@
+button {
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 12px;
+    background-color: #88bcd1; 
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px #0000009F;
+}
+
+.tasks-container .buttons {
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+    margin-top: 10px;
+}
+
+.tasks-container button {
+    flex: 1; 
+    max-width: 120px; 
+    text-align: center;
+}
+
+
+@media (max-width: 600px) {
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+body.light-theme button {
+    background-color: #4C4C4C;
+    color: #ffffff;
+}
+
+body.light-theme .tasks-container button {
+    background-color: #4C4C4C;
+    color: #ffffff;
+}
