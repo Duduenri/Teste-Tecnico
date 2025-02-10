@@ -10,6 +10,11 @@ body {
     min-height: 100vh;
 }
 
+body.light-theme {
+    background-color: #ffffff;
+    color: #333;
+}
+
 .container {
     background-color: #7687A1;
     padding: 20px;
@@ -21,9 +26,18 @@ body {
     margin-top: 20px; /* Adiciona esta linha para dar espaço no topo */
 }
 
+body.light-theme .container {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
 h1 {
     text-align: center;
     color: #fff;
+}
+
+body.light-theme h1 {
+    color: #333;
 }
 
 ul {
@@ -42,9 +56,18 @@ li {
     border-radius: 4px;
 }
 
+body.light-theme li {
+    background: #e0e0e0;
+    color: #333;
+}
+
 li.completed {
     text-decoration: line-through;
     color: #888;
+}
+
+body.light-theme li.completed {
+    color: #666;
 }
 
 @media (max-width: 600px) {

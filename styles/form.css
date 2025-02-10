@@ -23,3 +23,16 @@ label {
 .input-text::placeholder {
     color: #bbb;
 }
+
+body.light-theme form label {
+    color: #333;
+}
+
+body.light-theme .input-text {
+    background-color: #fff;
+    color: #333;
+}
+
+body.light-theme .input-text::placeholder {
+    color: #666;
+}

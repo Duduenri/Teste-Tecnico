@@ -26,3 +26,13 @@ button {
         font-size: 14px;
     }
 }
+
+body.light-theme button {
+    background-color: #4C4C4C;
+    color: #ffffff;
+}
+
+body.light-theme .tasks-container button {
+    background-color: #4C4C4C;
+    color: #ffffff;
+}
